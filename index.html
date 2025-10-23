@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <section class="sonner"></section>
+
+  <aside class="sidebar flex-col border-l-2">
+    <div class="flex-row">
+      <div class="flex-col">
+        <button class="border time-delta-up square">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-chevron-up-icon lucide-chevron-up">
+            <path d="m18 15-6-6-6 6" />
+          </svg>
+        </button>
+
+        <button class="border time-delta-down square">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-chevron-down-icon lucide-chevron-down">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
+      </div>
+      <div class="w-full border flex-col button-like content-center">
+        <span class="font-bold text-1.5">Nový: <span class="font-bold time-delta-show"></span></span>
+        <span class="font-bold text-1.5">Původní: <span class="font-bold time-delta-prev"></span></span>
+      </div>
+    </div>
+    <div class="flex-row">
+      <button class="border time-delta-cancel w-full font-bold text-1.5">Cancel</button>
+      <button class="border time-delta-accept w-full font-bold text-1.5">Save</button>
+    </div>
+  </aside>
+
+  <main>
+    <button class="border sidebar_toggle square font-bold">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-settings-icon lucide-settings">
+        <path
+          d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+        <circle cx="12" cy="12" r="3" />
+      </svg>
+    </button>
+    <div class="middle">
+      <div class="clock text-6 font-bold"></div>
+      <div class="date text-2 font-bold"></div>
+    </div>
+  </main>
+</body>
+<script src="./script.js"></script>
+
+</html>
