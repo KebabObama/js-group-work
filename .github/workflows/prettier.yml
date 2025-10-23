@@ -2,16 +2,18 @@ name: autofix.ci
 on:
   pull_request:
   push:
-permissions: {}
+    branches: [ "main" ]
+permissions:
+  contents: read
+
 jobs:
-  prettier:
+  autofix:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-      - run: |
-          yarn
-          yarn prettier . --write
-      - uses: autofix-ci/action@v1
-        with:
-          commit-message: "Apply Prettier format"
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+
+      - run: bun ci
+      - run: bun prettier --write .
+
+      - uses: autofix-ci/action@635ffb0c9798bd160680f18fd73371e355b85f27
