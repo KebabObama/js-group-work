@@ -1,37 +1,50 @@
+:root {
+  --background: rgba(102, 102, 102, 1);
+  --border: rgba(255, 255, 255, 1);
+  --select: rgba(170, 170, 170, 1);
+  --foreground: rgba(255, 255, 255, 1);
+  --sidebar: rgba(255, 255, 255, 0.31);
+}
 
 * {
   padding: 0;
+  color: var(--foreground);
   margin: 0;
   box-sizing: border-box;
   font-weight: 400;
   font-style: normal;
+  --swiper-theme-color: none;
 }
 
 main {
-  padding: 1rem;
   position: relative;
   width: 100dvw;
   height: 100dvh;
+  left: 0;
+  top: 0;
+  z-index: 0 !important;
 }
 
 .border {
-  border: 0.15rem solid #000000;
+  border: 0.15rem solid var(--border);
 }
 
-.border-l-2 {
-  border-left: 0.3rem solid #000000;
+.border-l {
+  border-left: 0.15rem solid var(--border);
 }
 
-button, .button-like {
+button,
+.button-like {
   transition: all 0.3s;
-  background: #AAAAAA;
+  background: var(--background);
   padding: 0.25rem 0.5rem;
   border-radius: 0.5rem;
+}
 
+button {
   &:hover {
-    background: #CCCCCC;
+    background: var(--select);
   }
-
   &:active {
     translate: 0 0.5rem;
   }
@@ -64,10 +77,13 @@ button, .button-like {
   position: fixed;
   top: 0;
   right: 0;
-  background: gray;
+  background: var(--sidebar);
+  backdrop-filter: blur(6.7px);
+  -webkit-backdrop-filter: blur(6.7px);
   transition: 0.3s ease-in-out;
   padding: 0;
   z-index: 9998;
+  border-left: 0.15rem solid var(--border);
 }
 
 .w-full {
@@ -109,21 +125,96 @@ button, .button-like {
 
 .sonner {
   position: fixed;
-  bottom: 0.5rem;
-  left: 0.5rem;
+  bottom: 1rem;
+  left: 1rem;
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
   z-index: 9999;
+  flex-direction: column;
 
-  .sonner-toast {
+  .toast {
     opacity: 0;
-    transform: translateY(1rem);
-    transition: all 0.3s ease;
+    transform: translateX(-2rem);
+    transition: all 0.3s fade-out;
     pointer-events: none;
+    margin-top: -2rem;
+
+    &:last-child {
+      scale: 1;
+    }
+    &:nth-last-child(2) {
+      scale: 0.95;
+    }
+    &:nth-last-child(3) {
+      scale: 0.9025;
+    }
+    &:nth-last-child(4) {
+      scale: 0.857375;
+    }
+    &:nth-last-child(5) {
+      scale: 0.81450625;
+    }
+    &:nth-last-child(6) {
+      scale: 0.7737809375;
+    }
+    &:nth-last-child(n + 6) {
+      opacity: 0;
+    }
   }
-  .show {
+
+  .toast--show {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
+}
+
+.select-none {
+  user-select: none;
+}
+
+.swiper {
+  width: 100dvw;
+  height: 100dvh;
+}
+
+.base {
+  position: fixed;
+  z-index: 10;
+  width: 100dvw;
+  height: 100dvh;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  * {
+    pointer-events: auto;
+  }
+}
+
+.swiper-pagination {
+  span {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0.2rem solid var(--foreground);
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--foreground) !important;
+}
+
+.swiper-slide {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 1rem;
+}
+
+.sl1 {
+  background-image: url("https://images7.alphacoders.com/457/457015.jpg");
+}
+.sl2 {
+  background-image: url("https://www.hdwallpapers.in/download/beautiful_stones_lake_trees_forest_rock_mountains_sunrays_blue_sky_background_hd_nature-2560x1440.jpg");
+}
+.sl3 {
+  background-image: url("https://4kwallpapers.com/images/wallpapers/mountains-path-hill-spring-aesthetic-landscape-scenery-3840x2160-421.jpg");
 }
