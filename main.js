@@ -2,6 +2,7 @@ import { createClock, createControl, createReader } from "./modules/clock.js";
 import { sidebar } from "./modules/sidebar.js";
 import { toast } from "./modules/sonner.js";
 
+// Swiper initialization
 new Swiper(".swiper", {
   spaceBetween: 0,
   direction: "horizontal",
