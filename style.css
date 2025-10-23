@@ -109,6 +109,21 @@ button, .button-like {
 
 .sonner {
   position: fixed;
-  bottom: 0;
-  left: 0;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 9999;
+
+  .sonner-toast {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  .show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

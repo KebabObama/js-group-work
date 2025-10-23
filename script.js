@@ -46,19 +46,17 @@ setInterval(() => {
 }, 1000);
 
 const message = (msg) => {
-  const sonner_body_element = document.querySelector("sonner");
-  if (!sonner_body_element) return;
+  const sonner_body_element = document.querySelector(".sonner");
   const temp = document.createElement("div");
-  temp.className = "sonner-toast";
+  temp.className = "sonner-toast button-like font-bold text-1.5 border show";
   temp.textContent = msg;
   sonner_body_element.appendChild(temp);
-  requestAnimationFrame(() => temp.classList.add("show"));
   setTimeout(() => {
     temp.classList.remove("show");
-    temp.classList.add("hide");
     temp.addEventListener("transitionend", () => temp.remove(), { once: true });
   }, 3000);
 };
+
 
 const time_delta_show_element = document.querySelector(".time-delta-show");
 const time_delta_prev_element = document.querySelector(".time-delta-prev");
