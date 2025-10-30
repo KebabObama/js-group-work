@@ -83,7 +83,6 @@ button {
   transition: 0.3s ease-in-out;
   padding: 0;
   z-index: 9998;
-  border-left: 0.15rem solid var(--border);
 }
 
 .w-full {
@@ -113,6 +112,7 @@ button {
 .sidebar--active {
   width: 24rem;
   padding: 0.5rem;
+  border-left: 0.15rem solid var(--border);
 }
 
 .middle {
@@ -183,6 +183,7 @@ button {
   height: 100dvh;
   left: 0;
   top: 0;
+  margin: 1rem;
   pointer-events: none;
   * {
     pointer-events: auto;
