@@ -10,6 +10,8 @@
 * {
   padding: 0;
   color: var(--foreground);
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
   margin: 0;
   box-sizing: border-box;
   font-weight: 400;
