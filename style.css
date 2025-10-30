@@ -130,13 +130,18 @@ button {
   display: flex;
   z-index: 9999;
   flex-direction: column;
+  pointer-events: auto;
 
   .toast {
     opacity: 0;
     transform: translateX(-2rem);
-    transition: all 0.3s fade-out;
+    transition: all 0.3s ease;
     pointer-events: none;
     margin-top: -2rem;
+
+    &:hover {
+      margin-top: 0;
+    }
 
     &:last-child {
       scale: 1;
@@ -161,11 +166,19 @@ button {
     }
   }
 
+  &:hover {
+    .toast {
+      margin-top: 0.5rem;
+      scale: 1;
+    }
+  }
+
   .toast--show {
     opacity: 1;
     transform: translateX(0);
   }
 }
+
 
 .select-none {
   user-select: none;
@@ -183,7 +196,7 @@ button {
   height: 100dvh;
   left: 0;
   top: 0;
-  margin: 1rem;
+  margin: 0.5rem;
   pointer-events: none;
   * {
     pointer-events: auto;
